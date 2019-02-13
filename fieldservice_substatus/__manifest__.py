@@ -16,6 +16,8 @@
     'data': [
         'security/ir.model.access.csv',
         'views/fsm_stage_status.xml',
+        'views/fsm_stage.xml',
+        'views/fsm_order.xml'
     ],
     'installable': True,
     'license': 'AGPL-3',
@@ -23,5 +25,6 @@
     'maintainers': [
         'max3903',
         'brian10048',
+        'bodedra'
     ],
 }
