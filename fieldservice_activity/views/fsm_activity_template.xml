@@ -28,7 +28,7 @@
                     <group>
                         <group>
                             <field name="outcome_type"/>
-                            <field name="outcome_ids"
+                            <field name="condition_ids"
                                    widget="many2many_tags"/>
                         </group>
                         <group>
