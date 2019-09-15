@@ -36,7 +36,7 @@
                                    groups="base.group_multi_company"/>
                         </group>
                     </group>
-                    <group string="Instructions">
+                    <group name="instructions" string="Instructions">
                         <field name="instructions" nolabel="1" widget="html"/>
                     </group>
                 </sheet>

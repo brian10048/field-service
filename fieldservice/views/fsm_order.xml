@@ -154,7 +154,7 @@
                                 <field name="location_directions" nolabel="1" widget="html"/>
                             </group>
                         </page>
-                        <page string="Execution">
+                        <page name="execution" string="Execution">
                             <group>
                                 <group id="execution-left">
                                     <field name="date_start"/>

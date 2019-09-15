@@ -1,0 +1,51 @@
+<odoo>
+
+    <!-- Field Service Conditions -->
+    <record id="fsm_condition_tree_view" model="ir.ui.view">
+        <field name="name">fsm.condition.tree</field>
+        <field name="model">fsm.condition</field>
+        <field name="arch" type="xml">
+            <tree string="Condition">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="fsm_condition_form_view" model="ir.ui.view">
+        <field name="name">fsm.condition.form</field>
+        <field name="model">fsm.condition</field>
+        <field name="arch" type="xml">
+            <form string="Condition">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder=" Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_fsm_condition" model="ir.actions.act_window">
+        <field name="name">Field Service Conditions</field>
+        <field name="res_model">fsm.condition</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Define a Condition for field service activities here.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_fsm_condition"
+              name="Conditions"
+              action="action_fsm_condition"
+              parent="fieldservice.menu_fsm_config_order"
+              sequence="35"/>
+
+</odoo>

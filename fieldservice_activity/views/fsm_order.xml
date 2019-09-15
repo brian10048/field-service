@@ -1,0 +1,23 @@
+<odoo>
+
+    <record id="fsm_order_inherit_activity" model="ir.ui.view">
+        <field name="name">fsm.order.activity</field>
+        <field name="model">fsm.order</field>
+        <field name="inherit_id" ref="fieldservice.fsm_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='execution']/group" position="after">
+                <group name="activities" string="Activities">
+                    <field name="fsm_activity_ids" nolabel="1"
+                           widget="one2many">
+                        <tree>
+                            <field name="sequence" widget="handle"/>
+                            <field name="activity_template_id"/>
+                            <field name="condition_ids" widget="many2many_tags"/>
+                        </tree>
+                    </field>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

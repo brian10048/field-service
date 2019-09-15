@@ -1,0 +1,61 @@
+ <?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Field Service Activity -->
+    <record id="fsm_activity_tree_view" model="ir.ui.view">
+        <field name="name">fsm.activity.tree</field>
+        <field name="model">fsm.activity</field>
+        <field name="arch" type="xml">
+            <tree string="Activities">
+                <field name="order_id"/>
+                <field name="sequence"/>
+                <field name="activity_template_id"/>
+                <field name="outcome_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="fsm_activity_form_view" model="ir.ui.view">
+        <field name="name">fsm.activity.form</field>
+        <field name="model">fsm.activity</field>
+        <field name="arch" type="xml">
+            <form string="Activities">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="activity_template_id"/>
+                            <field name="outcome_type"/>
+                            <field name="condition_ids"
+                                   widget="many2many_tags"/>
+                        </group>
+                        <group>
+                            <field name="order_id"/>
+                        </group>
+                    </group>
+                    <group string="Description">
+                        <field name="description" widget="html" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_fsm_activity" model="ir.actions.act_window">
+        <field name="name">Field Service Activities</field>
+        <field name="res_model">fsm.activity</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Define an Activity for field service orders here.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_fsm_activity"
+              name="Activities"
+              action="action_fsm_activity"
+              parent="fieldservice.operations"
+              sequence="35"/>
+
+</odoo>
