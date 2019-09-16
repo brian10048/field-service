@@ -8,7 +8,7 @@
             <group name="instructions" position="after">
                 <group name="activities" string="Activities">
                     <field name="activity_line_ids" nolabel="1"
-                           widget="many2many">
+                           widget="one2many">
                         <tree>
                             <field name="sequence" widget="handle"/>
                             <field name="activity_template_id"/>

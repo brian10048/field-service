@@ -16,7 +16,7 @@ class FSMActivity(models.Model):
                                     'Outcome Type', required=True)
     condition_ids = fields.Many2many('fsm.condition', domain=[
                                         ('id', 'in',
-                                         'activity_template_id.condition_ids')
+                                         activity_template_id.condition_ids)
                                      ])
     order_id = fields.Many2one('fsm.order', string='Order',
                                index=True, required=True)

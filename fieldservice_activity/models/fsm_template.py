@@ -7,7 +7,8 @@ from odoo import fields, models
 class FSMTemplate(models.Model):
     _inherit = 'fsm.template'
 
-    activity_line_ids = fields.Many2one('fsm.template.activity.line',
+    activity_line_ids = fields.One2many('fsm.template.activity.line',
+                                        'fsm_template_id',
                                         string='Activity Templates')
 
 
@@ -18,4 +19,6 @@ class FSMTemplateActivityLine(models.Model):
 
     activity_template_id = fields.Many2one('fsm.activity.template',
                                             string='Activity Template')
+    fsm_template_id = fields.Many2one('fsm.template', string='Order Template',
+                                      index=True, required=True)
     sequence = fields.Integer(string='Sequence', default=10)

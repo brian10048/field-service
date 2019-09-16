@@ -23,7 +23,7 @@
                         </h1>
                     </div>
                     <group string="Description">
-                        <field name="description"/>
+                        <field name="description" nolabel="1"/>
                     </group>
                     <group>
                         <group>
