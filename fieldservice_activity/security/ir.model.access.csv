@@ -1,6 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_fsm_activity_template_user,fsm.activity.template.user,model_fsm_activity_template,fieldservice.group_fsm_user,1,0,0,0
 access_fsm_activity_template_manager,fsm.activity.template.manager,model_fsm_activity_template,fieldservice.group_fsm_manager,1,1,1,1
+access_fsm_activity_template_line_user,fsm.activity.template.line.user,model_fsm_activity_template_line,fieldservice.group_fsm_user,1,0,0,0
+access_fsm_activity_template_line_manager,fsm.activity.template.line.manager,model_fsm_activity_template_line,fieldservice.group_fsm_manager,1,1,1,1
 access_fsm_condition_user,fsm.condition.user,model_fsm_condition,fieldservice.group_fsm_user,1,0,0,0
 access_fsm_condition_manager,fsm.condition.manager,model_fsm_condition,fieldservice.group_fsm_manager,1,1,1,1
 access_fsm_activity_user,fsm.activity.user,model_fsm_activity,fieldservice.group_fsm_user,1,1,0,0
