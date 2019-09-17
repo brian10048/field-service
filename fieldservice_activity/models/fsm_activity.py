@@ -14,10 +14,9 @@ class FSMActivity(models.Model):
     outcome_type = fields.Selection([('single', 'One Outcome'),
                                     ('multi', 'Multiple Outcomes')],
                                     'Outcome Type', required=True)
-    condition_ids = fields.Many2many('fsm.condition', domain=[
-                                        ('id', 'in',
-                                         activity_template_id.condition_ids)
-                                     ])
+    condition_ids = fields.Many2many(
+        'fsm.condition', domain=lambda self:
+            [('id', 'in', self.activity_template_id.condition_ids)])
     order_id = fields.Many2one('fsm.order', string='Order',
                                index=True, required=True)
     sequence = fields.Integer(string='Sequence', default=10)
