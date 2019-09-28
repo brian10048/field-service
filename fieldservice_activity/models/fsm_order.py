@@ -8,7 +8,7 @@ class FSMOrder(models.Model):
     _inherit = 'fsm.order'
 
     fsm_activity_ids = fields.One2many('fsm.activity', 'order_id',
-                                       string='Activities',)
+                                       string='Activities', auto_join=True)
 
     @api.onchange('template_id')
     def _onchange_template_id(self):

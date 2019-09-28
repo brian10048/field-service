@@ -8,7 +8,7 @@ class FSMTemplate(models.Model):
     _inherit = 'fsm.template'
 
     activity_line_ids = fields.One2many('fsm.template.activity.line',
-                                        'fsm_template_id',
+                                        'fsm_template_id', auto_join=True,
                                         string='Activity Templates')
 
 

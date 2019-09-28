@@ -11,7 +11,7 @@ class FSMActivityTemplate(models.Model):
     name = fields.Char(string='Name', required=True)
     description = fields.Html(string='Description')
     outcome_type = fields.Selection([('single', 'One Outcome'),
-                                    ('multi', 'Multiple Outcomes')],
+                                     ('multi', 'Multiple Outcomes')],
                                     'Outcome Type', required=True)
     condition_ids = fields.Many2many('fsm.condition',
                                      string="Possible Conditions")

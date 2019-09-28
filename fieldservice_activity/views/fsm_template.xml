@@ -9,7 +9,7 @@
                 <group name="activities" string="Activities">
                     <field name="activity_line_ids" nolabel="1"
                            widget="one2many">
-                        <tree>
+                        <tree editable="bottom">
                             <field name="sequence" widget="handle"/>
                             <field name="activity_template_id"/>
                         </tree>
