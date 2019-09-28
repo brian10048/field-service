@@ -2,7 +2,9 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
+import logging
 
+_logger = logging.getLogger(__name__)
 
 class FSMOrder(models.Model):
     _inherit = 'fsm.order'
@@ -27,5 +29,6 @@ class FSMOrder(models.Model):
                 'outcome_type': act_template.outcome_type,
                 'sequence': line.sequence,
             }
+            _logger.info(vals)
             activity_lines.append((0, 0, vals))
         self.fsm_activity_ids = activity_lines
