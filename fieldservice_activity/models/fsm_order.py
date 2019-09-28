@@ -26,7 +26,6 @@ class FSMOrder(models.Model):
                 'description': act_template.description,
                 'outcome_type': act_template.outcome_type,
                 'sequence': line.sequence,
-                'order_id': self.id,
             }
             activity_lines.append((0, 0, vals))
         self.fsm_activity_ids = activity_lines

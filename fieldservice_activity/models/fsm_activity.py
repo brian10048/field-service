@@ -16,7 +16,7 @@ class FSMActivity(models.Model):
                                     'Outcome Type', required=True)
     condition_ids = fields.Many2many(
         'fsm.condition', domain=lambda self:
-            [('id', 'in', self.activity_template_id.condition_ids)])
+            [('id', 'in', self.activity_template_id.condition_ids.ids)])
     order_id = fields.Many2one('fsm.order', string='Order',
                                index=True, required=True)
     sequence = fields.Integer(string='Sequence', default=10)
