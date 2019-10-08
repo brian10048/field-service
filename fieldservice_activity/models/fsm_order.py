@@ -31,4 +31,5 @@ class FSMOrder(models.Model):
             }
             _logger.info(vals)
             activity_lines.append((0, 0, vals))
+            _logger.info("Lines: " + activity_lines)
         self.fsm_activity_ids = activity_lines

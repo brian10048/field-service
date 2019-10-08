@@ -22,9 +22,6 @@
                             <field name="name" placeholder=" Name"/>
                         </h1>
                     </div>
-                    <group string="Description">
-                        <field name="description" nolabel="1"/>
-                    </group>
                     <group>
                         <group>
                             <field name="outcome_type"/>
@@ -34,6 +31,11 @@
                         <group>
                         </group>
                     </group>
+                    <notebook>
+                        <page name="description" string="Description">
+                            <field name="description" nolabel="1"/>
+                        </page>
+                    </notebook>                    
                 </sheet>
             </form>
         </field>

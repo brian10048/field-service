@@ -11,12 +11,13 @@ class FSMActivity(models.Model):
     activity_template_id = fields.Many2one('fsm.activity.template',
                                            string='Activity Template')
     description = fields.Html(string='Description')
-    outcome_type = fields.Selection([('single', 'One Outcome'),
+    outcome_type = fields.Selection([('text', 'Text'),
+                                     ('single', 'One Outcome'),
                                      ('multi', 'Multiple Outcomes')],
                                     'Outcome Type', required=True)
     condition_ids = fields.Many2many(
-        'fsm.condition', domain=lambda self:
-            [('id', 'in', self.activity_template_id.condition_ids.ids)])
+        'fsm.condition',
+        domain="[('id', 'in', activity_template_id.condition_ids)]")
     order_id = fields.Many2one('fsm.order', string='Order',
                                index=True, required=True)
     sequence = fields.Integer(string='Sequence', default=10)

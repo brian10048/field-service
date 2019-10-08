@@ -5,8 +5,8 @@
         <field name="model">fsm.order</field>
         <field name="inherit_id" ref="fieldservice.fsm_order_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//page[@name='execution']/group" position="after">
-                <group name="activities" string="Activities">
+            <xpath expr="//page[@name='execution']" position="after">
+                <page name="activities" string="Activities">
                     <field name="fsm_activity_ids" nolabel="1"
                            widget="one2many">
                         <tree>
@@ -15,7 +15,7 @@
                             <field name="condition_ids" widget="many2many_tags"/>
                         </tree>
                     </field>
-                </group>
+                </page>
             </xpath>
         </field>
     </record>
