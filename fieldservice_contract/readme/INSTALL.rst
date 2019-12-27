@@ -1,1 +1,1 @@
-This module installs product_contract and fieldservice_sale
+This module installs product_contract and fieldservice_sale_recurring

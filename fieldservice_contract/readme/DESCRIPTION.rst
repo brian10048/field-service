@@ -2,14 +2,14 @@ This module allows to manage field services orders and recurring orders from con
 
 Features:
 * FSM orders are linked to invoices based on the invoice period
-* FSM recurring orders' end date is tied to contract line end's date.
+* FSM recurring orders' end date is tied to contract line end date.
 * Quantity on invoice line can be constant or based on the number of FSM orders within the period.
 
 
-Example of workflow: 
+Example of workflow:
 
 A sale order, when confirmed, creates a contract.
-The contract creates field services recurring orders and manage the invoicing.
+The contract creates field service recurring orders and manages the invoicing.
 
 
 Why use sale order:

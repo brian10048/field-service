@@ -25,4 +25,3 @@ class SaleOrderLine(models.Model):
         return super(
             SaleOrderLine, self.filtered(lambda l: not l.is_contract)
             )._field_create_fsm_recurring()
-

@@ -228,8 +228,7 @@ class ContractLine(models.Model):
         self.filtered(
             lambda l: l.product_id.field_service_tracking == 'line'
         )._field_find_fsm_order()
-        
+
         self.filtered(
             lambda l: l.product_id.field_service_tracking == 'recurring'
         )._field_find_fsm_recurring()
-

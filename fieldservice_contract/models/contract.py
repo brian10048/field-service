@@ -21,6 +21,23 @@ class ContractContract(models.Model):
         default=lambda x: x._default_invoiceable_stage()
     )
 
+    fsm_order_count = fields.Integer(
+        string='FSM Orders', compute='_compute_fsm_counts')
+    fsm_recurring_count = fields.Integer(
+        string='FSM Recurrings', compute='_compute_fsm_counts')
+
+    @api.multi
+    @api.depends('contract_line_ids')
+    def _compute_fsm_counts(self):
+        for contract in self:
+            contract.fsm_recurring_count = self.env['fsm.recurring']. \
+                search_count([
+                    ('contract_line_id', 'in', contract.contract_line_ids.ids)
+                ])
+            contract.fsm_order_count = self.env['fsm.order'].search_count([
+                ('contract_id', '=', contract.id)
+            ])
+
     def _default_invoiceable_stage(self):
         return self.env.ref('fieldservice.fsm_stage_completed').ids
 

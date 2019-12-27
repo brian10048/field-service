@@ -15,14 +15,18 @@
                         name="action_view_fsm_recurring"
                         class="oe_stat_button"
                         icon="fa-calendar"
-                        string="FSM Recurring"
-                ></button>
+                        attrs="{'invisible': [('fsm_recurring_count', '=', 0)]}"
+                        groups="fieldservice.group_fsm_user">
+                    <field name="fsm_recurring_count" widget="statinfo" string="FSM Recurring Orders"/>
+                </button>
                 <button type="object"
                         name="action_view_fsm_order"
                         class="oe_stat_button"
-                        icon="fa-tasks"
-                        string="FSM Order"
-                ></button>
+                        icon="fa-map"
+                        attrs="{'invisible': [('fsm_order_count', '=', 0)]}"
+                        groups="fieldservice.group_fsm_user">
+                    <field name="fsm_order_count" widget="statinfo" string="FSM Orders"/>
+                </button>
             </xpath>
         </field>
     </record>
