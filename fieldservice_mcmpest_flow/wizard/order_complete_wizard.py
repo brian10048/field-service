@@ -9,7 +9,7 @@ class order_complete_wizard(models.TransientModel):
     _description = 'FSM Order Completion Wizard'
 
     fsm_order_id = fields.Many2one('fsm.order', string='FSM Order',
-                                   required-True)
+                                   required=True)
     resolution = fields.Char('Resolution Notes')
 
     def action_finish_wizard(self):
@@ -17,5 +17,7 @@ class order_complete_wizard(models.TransientModel):
         for wiz in self:
             wiz.fsm_order_id.write({
                 'resolution': wiz.resolution,
+                'date_end': wiz.fsm_order_id.date_end or fields.Datetime.now()
             })
+            wiz.fsm_order_id.action_complete()
         return False

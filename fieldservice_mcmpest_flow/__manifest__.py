@@ -10,10 +10,11 @@
         'Brian McMaster',
     'website': 'https://github.com/OCA/field-service',
     'depends': [
-        'fieldservice',
+        'fieldservice_mcmpest_groups',
     ],
     'data': [
         'wizard/order_complete_wizard.xml',
+        'wizard/order_not_finished_wizard.xml',
         'data/fsm_stage.xml',
         'views/fsm_order.xml',
     ],
