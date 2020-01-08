@@ -51,6 +51,8 @@ class FSMLocation(models.Model):
                                      compute='_compute_equipment_ids')
     sublocation_count = fields.Integer(string='Sub Locations',
                                        compute='_compute_sublocation_ids')
+    fsm_order_count = fields.Integer(string='Orders',
+                                     compute='_compute_order_ids')
     complete_name = fields.Char(string='Complete Name',
                                 compute='_compute_complete_name',
                                 store=True)
@@ -275,6 +277,30 @@ class FSMLocation(models.Model):
         for loc in self:
             contacts = self.comp_count(1, 0, loc)
             loc.contact_count = contacts
+
+    @api.multi
+    def action_view_fsm_orders(self):
+        for location in self:
+            locations = self.get_action_views(0, 0, location)
+            fsm_orders = locations.mapped('fsm_order_ids')
+            action = self.env.ref('fieldservice.action_fsm_dash_order').read()[0]
+            if len(fsm_orders) > 1:
+                action['domain'] = [('id', 'in', fsm_orders.ids)]
+            elif len(fsm_orders) == 1:
+                action['views'] = [(self.env.
+                                    ref('fieldservice.fsm_order_form').id,
+                                    'form')]
+                action['res_id'] = fsm_orders.id
+            else:
+                action = {'type': 'ir.actions.act_window_close'}
+            return action
+
+    @api.multi
+    def _compute_fsm_order_ids(self):
+        for location in self:
+            locations = self.get_action_views(0, 0, location)
+            location.fsm_order_count = self.env['fsm.order'].search_count([
+                ('fsm_location_id', 'in', locations.ids)])
 
     @api.multi
     def action_view_equipment(self):

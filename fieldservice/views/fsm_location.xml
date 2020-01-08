@@ -62,6 +62,13 @@
                                 context="{'default_street': street, 'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 'default_country_id': country_id}">
                             <field name="contact_count" widget="statinfo" string="Contacts"/>
                         </button>
+                        <button type="object"
+                                name="action_view_fsm_orders"
+                                class="oe_stat_button"
+                                icon="fa-map"
+                                groups="base.group_user">
+                            <field name="fsm_order_count" widget="statinfo" string="Orders"/>
+                        </button>
                     </div>
                     <label for="name" class="oe_edit_only"/>
                     <h1><field name="name" required="True"/></h1>
