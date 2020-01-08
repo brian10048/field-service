@@ -1,4 +1,4 @@
-# Copyright (C) 2019 - TODAY, Brian McMaster, Open Source Integrators
+# Copyright (C) 2019, Brian McMaster, Open Source Integrators
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
@@ -24,6 +24,7 @@
         'views/fsm_order.xml',
         'views/fsm_recurring_template.xml',
         'views/fsm_recurring.xml',
+        'views/fsm_location.xml',
         'data/recurring_cron.xml',
     ],
     'license': 'AGPL-3',
