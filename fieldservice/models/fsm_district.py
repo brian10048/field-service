@@ -7,6 +7,7 @@ from odoo import fields, models
 class FSMDistrict(models.Model):
     _name = 'fsm.district'
     _description = 'District'
+    _order = 'name'
 
     name = fields.Char(string='Name', required=True)
     region_id = fields.Many2one('fsm.region', string='Region')

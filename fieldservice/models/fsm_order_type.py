@@ -6,5 +6,6 @@ from odoo import fields, models
 class FSMOrderType(models.Model):
     _name = 'fsm.order.type'
     _description = 'Field Service Order Type'
+    _order = 'name'
 
     name = fields.Char(string='Name')

@@ -7,6 +7,7 @@ from odoo import fields, models
 class FSMTemplate(models.Model):
     _name = 'fsm.template'
     _description = 'Field Service Order Template'
+    _order = 'name'
 
     name = fields.Char(string='Name', required=True)
     instructions = fields.Text(string='Instructions')

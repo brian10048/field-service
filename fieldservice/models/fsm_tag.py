@@ -7,6 +7,7 @@ from odoo import fields, models
 class FSMTag(models.Model):
     _name = 'fsm.tag'
     _description = 'Field Service Tag'
+    _order = 'name'
 
     name = fields.Char(string='Name', required=True)
     parent_id = fields.Many2one('fsm.tag', string='Parent')

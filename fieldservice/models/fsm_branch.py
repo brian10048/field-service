@@ -7,6 +7,7 @@ from odoo import fields, models
 class FSMBranch(models.Model):
     _name = 'fsm.branch'
     _description = 'branch'
+    _order = 'name'
 
     name = fields.Char(string='Name', required=True)
     partner_id = fields.Many2one('res.partner', string='Branch Manager')

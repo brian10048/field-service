@@ -10,6 +10,7 @@ class FSMLocation(models.Model):
     _inherits = {'res.partner': 'partner_id'}
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = 'Field Service Location'
+    _order = 'name'
 
     ref = fields.Char(string='Internal Reference', copy=False)
     direction = fields.Char(string='Directions')
@@ -52,7 +53,7 @@ class FSMLocation(models.Model):
     sublocation_count = fields.Integer(string='Sub Locations',
                                        compute='_compute_sublocation_ids')
     fsm_order_count = fields.Integer(string='Orders',
-                                     compute='_compute_order_ids')
+                                     compute='_compute_fsm_order_ids')
     complete_name = fields.Char(string='Complete Name',
                                 compute='_compute_complete_name',
                                 store=True)
@@ -282,7 +283,9 @@ class FSMLocation(models.Model):
     def action_view_fsm_orders(self):
         for location in self:
             locations = self.get_action_views(0, 0, location)
-            fsm_orders = locations.mapped('fsm_order_ids')
+            fsm_orders = self.env['fsm.order'].search(
+                [('location_id', 'in', 'locations.ids')]
+            )
             action = self.env.ref('fieldservice.action_fsm_dash_order').read()[0]
             if len(fsm_orders) > 1:
                 action['domain'] = [('id', 'in', fsm_orders.ids)]

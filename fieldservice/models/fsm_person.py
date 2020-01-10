@@ -8,6 +8,7 @@ class FSMPerson(models.Model):
     _name = 'fsm.person'
     _inherits = {'res.partner': 'partner_id'}
     _description = 'Field Service Worker'
+    _order = 'name'
 
     partner_id = fields.Many2one('res.partner', string='Related Partner',
                                  required=True, ondelete='restrict',

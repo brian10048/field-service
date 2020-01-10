@@ -7,6 +7,7 @@ from odoo import fields, models
 class FSMCategory(models.Model):
     _name = 'fsm.category'
     _description = 'Field Service Worker Category'
+    _order = 'name'
 
     name = fields.Char(string='Name', required='True')
     parent_id = fields.Many2one('fsm.category', string='Parent')

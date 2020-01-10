@@ -7,6 +7,7 @@ from odoo import fields, models
 class FSMRegion(models.Model):
     _name = 'fsm.region'
     _description = 'Region'
+    _order = 'name'
 
     name = fields.Char(string='Name', required=True)
     description = fields.Char(string='Description')

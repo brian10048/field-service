@@ -7,6 +7,7 @@ from odoo import fields, models
 class FSMTerritory(models.Model):
     _name = 'fsm.territory'
     _description = 'Territory'
+    _order = 'name'
 
     name = fields.Char(string='Name', required=True)
     branch_id = fields.Many2one('fsm.branch', string='Branch')

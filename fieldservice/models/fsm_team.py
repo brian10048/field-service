@@ -8,6 +8,7 @@ class FSMTeam(models.Model):
     _name = 'fsm.team'
     _description = 'Field Service Team'
     _inherit = ['mail.thread', 'mail.activity.mixin']
+    _order = 'sequence, name'
 
     def _default_stages(self):
         return self.env['fsm.stage'].search([('is_default', '=', True)])
