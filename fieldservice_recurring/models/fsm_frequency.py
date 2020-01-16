@@ -1,4 +1,5 @@
-# Copyright (C) 2019 - TODAY, Brian McMaster, Open Source Integrators
+# Copyright (C) 2019 Brian McMaster
+# Copyright (C) 2019 Open Source Integrators
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from dateutil.rrule import MO, TU, WE, TH, FR, SA, SU
@@ -38,6 +39,7 @@ class FSMFrequency(models.Model):
     _name = 'fsm.frequency'
     _description = 'Frequency Rule for Field Service Orders'
     _inherit = ['mail.thread']
+    _order = 'name'
 
     name = fields.Char('Name', required=True)
     active = fields.Boolean(default=True)

@@ -1,4 +1,5 @@
-# Copyright (C) 2019 - TODAY, Brian McMaster, Open Source Integrators
+# Copyright (C) 2019 Brian McMaster
+# Copyright (C) 2019 Open Source Integrators
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from datetime import datetime
@@ -12,6 +13,7 @@ class FSMRecurringOrder(models.Model):
     _name = 'fsm.recurring'
     _description = 'Recurring Field Service Order'
     _inherit = ['mail.thread', 'mail.activity.mixin']
+    _order = 'name'
 
     def _default_team_id(self):
         return self.env.ref('fieldservice.fsm_team_default')
