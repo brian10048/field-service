@@ -1,4 +1,4 @@
-# Copyright (C) 2018 - TODAY, Brian McMaster
+# Copyright (C) 2018 Brian McMaster
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import fields, models
@@ -7,6 +7,7 @@ from odoo import fields, models
 class FSMVehicle(models.Model):
     _name = 'fsm.vehicle'
     _description = 'Field Service Vehicle'
+    _order = 'name'
 
     name = fields.Char(string='Name', required='True')
     person_id = fields.Many2one('fsm.person', string='Assigned Driver')
