@@ -8,6 +8,7 @@ from odoo import api, fields, models, _
 class FSMRouteDayRoute(models.Model):
     _name = 'fsm.route.dayroute'
     _description = 'Field Service Route Dayroute'
+    _order = 'name'
 
     @api.depends('route_id')
     def _compute_order_count(self):

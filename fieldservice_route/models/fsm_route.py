@@ -8,6 +8,7 @@ from odoo import fields, models
 class FSMRoute(models.Model):
     _name = 'fsm.route'
     _description = 'Field Service Route'
+    _order = 'name'
 
     name = fields.Char('Name', required=True)
     territory_id = fields.Many2one('fsm.territory', string='Territory')
