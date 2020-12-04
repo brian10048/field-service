@@ -139,7 +139,7 @@ class SaleOrderLine(models.Model):
             if rec.product_id.field_service_tracking == "line":
                 rec._field_find_fsm_order()
 
-    def _prepare_invoice_line(self, qty):
-        res = super()._prepare_invoice_line(qty)
+    def _prepare_invoice_line(self):
+        res = super()._prepare_invoice_line()
         res.update({"fsm_order_id": self.fsm_order_id.id})
         return res
