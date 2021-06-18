@@ -10,4 +10,17 @@ column_renames = {
 
 @openupgrade.migrate()
 def migrate(env, version):
+    openupgrade.logged_query(
+        env.cr, """
+        ALTER TABLE account_move_line
+        ADD COLUMN fsm_order_id integer""",
+    )
+    openupgrade.logged_query(
+        env.cr,
+        """
+        UPDATE account_move_line aml
+        SET fsm_order_id = ail.fsm_order_id
+        FROM account_invoice_line ail
+        WHERE ail.id = aml.old_invoice_line_id""",
+    )
     openupgrade.rename_columns(env.cr, column_renames)
