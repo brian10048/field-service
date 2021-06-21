@@ -96,4 +96,11 @@
         <field name="view_mode">tree,form,google_map</field>
     </record>
 
+    <record id="action_locations_view_map" model="ir.actions.act_window.view">
+        <field name="sequence" eval="3"/>
+        <field name="view_mode">google_map</field>
+        <field name="view_id" ref="ir_ui_view_fsm_location_map"/>
+        <field name="act_window_id" ref="fieldservice.action_fsm_location"/>
+    </record>
+
 </odoo>
