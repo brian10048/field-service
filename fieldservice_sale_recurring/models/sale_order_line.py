@@ -22,7 +22,6 @@ class SaleOrderLine(models.Model):
         if template.description:
             note += "\n " + template.description
         return {
-            "customer_id": self.order_id.partner_id.id,
             "location_id": self.order_id.fsm_location_id.id,
             "start_date": self.order_id.expected_date,
             "fsm_recurring_template_id": template.id,
