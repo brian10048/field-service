@@ -6,11 +6,10 @@
         <field name="arch" type="xml">
             <google_map
                 class="o_res_partner_map"
-                library="geometry"
-                string="Map"
+                string="Google Map"
                 lat="location_latitude"
                 lng="location_longitude"
-                color="marker_color"
+                color="red"
             >
                  <field name="name" select="1" />
                  <field name="display_name" />

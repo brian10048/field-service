@@ -30,7 +30,7 @@
                 string="Map"
                 lat="partner_latitude"
                 lng="partner_longitude"
-                color="marker_color"
+                color="blue"
             >
                 <field name="name" select="1" />
                 <field name="display_name" />
@@ -44,7 +44,6 @@
                 <field name="district_id" />
                 <field name="region_id" />
                 <field name="stage_id" />
-                <field name="marker_color" />
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click o_res_partner_kanban">
