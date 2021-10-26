@@ -29,7 +29,6 @@ class SaleOrderLine(models.Model):
             "max_orders": template.max_orders,
             "fsm_frequency_set_id": template.fsm_frequency_set_id.id,
             "fsm_order_template_id": template.fsm_order_template_id.id,
-            "sale_id": self.order_id.id,
             "sale_line_id": self.id,
             "company_id": self.company_id.id,
         }
