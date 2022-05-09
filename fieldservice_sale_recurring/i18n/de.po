@@ -19,7 +19,7 @@ msgstr ""
 #. module: fieldservice_sale_recurring
 #: model_terms:ir.ui.view,arch_db:fieldservice_sale_recurring.fsm_recurring_form_view_inherit_sale
 msgid "<span class=\"o_stat_text\">Sale Orders</span>"
-msgstr "<span class=\"o_stat_text\">Verkaufsaufträge</span>"
+msgstr "<span class=\"o_stat_text\">Verkaufsauftr??ge</span>"
 
 #. module: fieldservice_sale_recurring
 #: selection:product.template,field_service_tracking:0
@@ -29,6 +29,7 @@ msgstr "Wiederkehrenden Auftrag erstellen"
 #. module: fieldservice_sale_recurring
 #: selection:product.template,field_service_tracking:0
 #, fuzzy
+#| msgid "Create a recurring order"
 msgid "Create one FSM order per sale order"
 msgstr "Wiederkehrenden Auftrag erstellen"
 
@@ -59,7 +60,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:fieldservice_sale_recurring.field_sale_order__fsm_recurring_count
 #: model_terms:ir.ui.view,arch_db:fieldservice_sale_recurring.view_order_form_inherit_sale_fieldservice
 msgid "FSM Recurring Orders"
-msgstr "Wiederkehrende Service-Aufträge"
+msgstr "Wiederkehrende Service-Auftr??ge"
 
 #. module: fieldservice_sale_recurring
 #: model:ir.model.fields,help:fieldservice_sale_recurring.field_sale_order_line__fsm_recurring_id
@@ -70,7 +71,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:fieldservice_sale_recurring.field_product_product__fsm_recurring_template_id
 #: model:ir.model.fields,field_description:fieldservice_sale_recurring.field_product_template__fsm_recurring_template_id
 msgid "Field Service Recurring Template"
-msgstr "Vorlage für wiederkehrenden Service-Auftrag"
+msgstr "Vorlage f??r wiederkehrenden Service-Auftrag"
 
 #. module: fieldservice_sale_recurring
 #: model:ir.model.fields,field_description:fieldservice_sale_recurring.field_sale_order__fsm_recurring_ids
@@ -126,7 +127,7 @@ msgstr "Auftragszeile"
 #: code:addons/fieldservice_sale_recurring/models/fsm_recurring.py:21
 #, python-format
 msgid "Sales Orders"
-msgstr "Verkaufsaufträge"
+msgstr "Verkaufsauftr??ge"
 
 #. module: fieldservice_sale_recurring
 #: model:ir.model.fields,help:fieldservice_sale_recurring.field_product_product__fsm_recurring_template_id

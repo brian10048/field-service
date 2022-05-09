@@ -6,4 +6,4 @@
 
 * Serpent Consulting Services Pvt. Ltd. <support@serpentcs.com>
 * Brian McMaster <brian@mcmpest.com>
-* Raphaël Reverdy <raphael.reverdy@akretion.com>
+* Rapha??l Reverdy <raphael.reverdy@akretion.com>
