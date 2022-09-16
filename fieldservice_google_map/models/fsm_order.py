@@ -14,3 +14,4 @@ class FSMOrder(models.Model):
         related="location_id.partner_longitude", string="Location Longitude"
     )
     marker_color = fields.Char(related="stage_id.custom_color", string="Marker Color")
+    location_address = fields.Char(related="location_id.contact_address")

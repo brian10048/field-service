@@ -11,6 +11,7 @@
                 lat="location_latitude"
                 lng="location_longitude"
                 color="marker_color"
+                sidebar_subtitle="location_address"
             >
                  <field name="name" select="1" />
                  <field name="display_name" />
@@ -24,6 +25,7 @@
                  <field name="location_longitude" />
                  <field name="stage_id" />
                  <field name="marker_color" />
+                 <field name="location_address" />
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click o_res_partner_kanban">
