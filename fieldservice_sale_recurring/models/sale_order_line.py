@@ -53,11 +53,9 @@ class SaleOrderLine(models.Model):
                    # data-oe-model=fsm.recurring data-oe-id=%(id)s>%(name)s</a>
                 """
             ).format(
-                {
-                    "product": so_line.product_id.name,
-                    "id": fsm_recurring.id,
-                    "name": fsm_recurring.name,
-                }
+                product = so_line.product_id.name,
+                id = fsm_recurring.id,
+                name = fsm_recurring.name,
             )
             so_line.order_id.message_post(body=msg_body)
             # post message on fsm_recurring
@@ -67,11 +65,9 @@ class SaleOrderLine(models.Model):
                    (%(product)s)
                 """
             ).format(
-                {
-                    "order_id": so_line.order_id.id,
-                    "order": so_line.order_id.name,
-                    "product": so_line.product_id.name,
-                }
+                order_id = so_line.order_id.id,
+                order = so_line.order_id.name,
+                product = so_line.product_id.name,
             )
             fsm_recurring.message_post(body=fsm_recurring_msg)
             result[so_line.id] = fsm_recurring
