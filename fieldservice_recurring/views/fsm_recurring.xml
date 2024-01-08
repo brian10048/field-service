@@ -116,7 +116,7 @@
             <search string="Recurring Orders">
                 <field
                     name="name"
-                    filter_domain="['|', ('name', 'ilike', self), ('name', '=like', str(self) + '%')]"
+                    filter_domain="['|', ('name', 'ilike', self), ('name', '=like', self + '%')]"
                     string="FSM Recurring Order Name"
                 />
                 <field name="person_id" />
