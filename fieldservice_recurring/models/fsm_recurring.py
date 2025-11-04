@@ -221,10 +221,7 @@ class FSMRecurringOrder(models.Model):
         """
         orders = self.env["fsm.order"]
         for rec in self:
-            order_dates = []
-            for order in rec.fsm_order_ids:
-                if order.scheduled_date_start:
-                    order_dates.append(order.scheduled_date_start.date())
+            order_dates = rec.fsm_order_ids.mapped(lambda o: o.scheduled_date_start.date())
             max_orders = rec.max_orders if rec.max_orders > 0 else False
             order_count = rec.fsm_order_count
             for date in rec._get_rruleset():
