@@ -27,7 +27,7 @@ class SaleOrder(models.Model):
 
     def action_view_fsm_recurring(self):
         fsm_recurrings = self.mapped("fsm_recurring_ids")
-        action = self.env.ref("fieldservice_recurring.action_fsm_recurring").read()[0]
+        action = self.env['ir.actions.act_window']._for_xml_id("fieldservice_recurring.action_fsm_recurring")
         if len(fsm_recurrings) > 1:
             action["domain"] = [("id", "in", fsm_recurrings.ids)]
         elif len(fsm_recurrings) == 1:
